@@ -6,6 +6,7 @@ import './result.css';
 import '../App.css';
 import WeatherDisplay from './WeatherDisplay';
 import ImageDisplay from './ImageDisplay';
+import fairDay from '../rsz_1cloud-blue-sky.jpg'
 
 var checkDate = false
 var checkTime = false
@@ -22,6 +23,8 @@ function DesktopPage(props) {
     const [disableLocation, setDisabled] = useState(true);
     const [selectedValue, setSelected] = useState("None");
     const [checkSelect, setCheck] = useState(false);
+    const [background, setBackgrd] = useState(fairDay);
+    const [hColor, setColor] = useState("#fffffff");
 
     const disabledDate = (current) => {
         return current && current.valueOf() > Date.now();
@@ -31,7 +34,9 @@ function DesktopPage(props) {
         var testDate = new Date(dateSearch)
         var today = Date.now()
         var todayDate = new Date(today)
-        if (testDate.getUTCDate() == todayDate.getUTCDate() && testDate.getUTCMonth() == todayDate.getUTCMonth() && testDate.getUTCFullYear() == todayDate.getUTCFullYear()) {
+
+        if (testDate.getDate() == todayDate.getDate() && testDate.getMonth() == todayDate.getMonth() && testDate.getFullYear() == todayDate.getFullYear()) {
+            console.log("test")
             const hours = [];
             const currentHour = moment().hour();
         
@@ -144,14 +149,17 @@ function DesktopPage(props) {
 
     return (
         <div>
-            <Layout style={{minHeight:"100vh", height:"100%", overflow: "auto"}}>
-                <Header>
+            <Layout style={{minHeight:"100vh", height:"100%", overflow: "auto", backgroundImage: `url(${background})`}}>
+                <Header style={{color: hColor}}>
                     WeatherPix
                 </Header>
                     <Content className='content' style={{ height: "100%", padding: '50px 50px' }}>
                         <div className="site-layout-content">
                         <Row align="middle">
                             <Col span={16} align="middle" style={{height: "100%"}}>
+                            <Row align="middle" style={{padding: "5px", fontFamily: "pompiere", fontSize: "x-large"}}>
+                                Pick a Date, Time, and Location to begin
+                            </Row>
                                 <Row align="middle" style={{height: "10%", padding: "5px"}}>
                                     <Col span={11} align="middle">
                                         <DatePicker onChange={onChangeDate} disabledDate={disabledDate} style={{ border: true, borderColor: "#4b595e", color: "#ffffff", width: "100%", textAlign: 'center', height: '5vh' }} />
@@ -178,7 +186,7 @@ function DesktopPage(props) {
                             </Col>
                             <Col span={1} align="middle"></Col>
                             <Col span={7} align="middle">
-                                <WeatherDisplay selectedValue={selectedValue} forecasts={forecasts} check={checkSelect}/>
+                                <WeatherDisplay selectedValue={selectedValue} forecasts={forecasts} check={checkSelect} setBackgrd={setBackgrd} setColor={setColor}/>
                             </Col>
                         </Row>
                         </div>

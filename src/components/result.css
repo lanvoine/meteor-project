@@ -9348,6 +9348,7 @@ span.ant-radio + * {
   position: relative;
   background: #fff;
   border-radius: 2px;
+  box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
 }
 .ant-card-rtl {
   direction: rtl;
@@ -19862,7 +19863,7 @@ textarea.ant-input {
   flex-direction: column;
   /* fix firefox can't set height smaller than content on flex item */
   min-height: 0;
-  background: #f0f2f5;
+  background: transparent;
 }
 .ant-layout,
 .ant-layout * {
@@ -19884,8 +19885,8 @@ textarea.ant-input {
   padding: 0 50px;
   color: #bdf7ff;
   line-height: 64px;
-  background: #4b595e;
-  font-size: x-large;
+  background: transparent;
+  font-size: xx-large;
   font-family: "pompiere"
 }
 .ant-layout-footer {

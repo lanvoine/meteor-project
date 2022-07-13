@@ -150,6 +150,9 @@ function MobilePage(props) {
                 </Header>
                     <Content className='content' style={{ padding: '50px 50px' }}>
                         <div className="site-layout-content">
+                            <Row align="middle" style={{padding: "5px", fontFamily: "pompiere", fontSize: "x-large"}}>
+                                Pick a Date, Time, and Location to begin
+                            </Row>
                             <Row align="middle" style={{padding: '5px 5px'}}>
                                 <Col span={12} align="middle" style={{ height: 100}}>
                                     <DatePicker onChange={onChangeDate} disabledDate={disabledDate} style={{ border: true, borderColor: "#4b595e", color: "#ffffff", width: "100%", textAlign: 'center', height: 100}} />

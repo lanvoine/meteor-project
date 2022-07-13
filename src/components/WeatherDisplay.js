@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, { useState }  from 'react';
 import { Row, Col, Card, Image } from 'antd';
 import './result.css';
 import '../App.css';
@@ -9,16 +9,24 @@ import sun from '../sun.png'
 import thunderstorm from '../thunderstorm.png'
 import moon from '../crescent-moon.png'
 import mooncloud from '../mooncloud.png'
+import wind from '../wind.png'
+import fairNight from '../rsz_1night-sky.jpg'
+import fairDay from '../rsz_1cloud-blue-sky.jpg'
+import cldDay from '../rsz-cloudy-day.jpg'
+import cldNight from '../rsz-cloudy-night.jpg'
+import lRain from '../rsz-lightrain.jpg'
+import shwr from '../rsz-showers.jpg'
+import thndr from '../rsz-thunderstorm.jpg'
+import windy from '../rsz_windy.jpg'
 
-
-function WeatherDisplay(props) {
+function WeatherDisplay({setBackgrd, forecasts, selectedValue, check, setColor}) {
     var cardBack = "#ffffff"
     var cardText = "#000000"
     var image = sun
     var areaForecast = "None"
-    var forecasts = props.forecasts
-    var selectedValue = props.selectedValue
-    var check = props.check
+    // var forecasts = forecasts
+    // var selectedValue = selectedValue
+    // var check = check
 
     if (check) {
         var forecast = "None"
@@ -33,38 +41,88 @@ function WeatherDisplay(props) {
             cardBack = "#ffffff"
             cardText = "#000000"
             image = sun
+            setBackgrd(fairDay)
+            setColor("#ffffff")
         } else if (forecast == "Fair (Night)") {
             cardBack = "#1B2430"
             cardText = "#ffffff"
+            setBackgrd(fairNight)
             image = moon
+            setColor("#ffffff")
         } else if (forecast == "Partly Cloudy (Day)") {
             cardBack = "#4b595e"
             cardText = "#ffffff"
             image = partcloud
+            setBackgrd(cldDay)
+            setColor("#ffffff")
         } else if (forecast == "Partly Cloudy (Night)") {
             cardBack = "#4b595e"
             cardText = "#ffffff"
             image = mooncloud
+            setBackgrd(cldNight)
+            setColor("#ffffff")
         } else if (forecast == "Fair (Day)") {
             cardBack = "#bdf7ff"
             cardText = "#4b595e"
             image = sun
+            setBackgrd(fairDay)
+            setColor("#ffffff")
         } else if (forecast == "Cloudy") {
             cardBack = "#4b595e"
             cardText = "#ffffff"
             image = cloudy
+            setBackgrd(cldDay)
+            setColor("#ffffff")
         } else if (forecast == "Light Rain") {
             cardBack = "#6393a4"
             cardText = "#ffffff"
             image = rain
+            setBackgrd(lRain)
         } else if (forecast == "Showers") {
             cardBack = "#4c6972"
             cardText = "#ffffff"
             image = rain
+            setBackgrd(shwr)
+            setColor("#ffffff")
         } else if (forecast == "Thundery Showers") {
             cardBack = "#091A31"
             cardText = "#ffffff"
             image = thunderstorm
+            setBackgrd(thndr)
+            setColor("#ffffff")
+        } else if (forecast == "Fair & Warm") {
+            cardBack = "#bdf7ff"
+            cardText = "#4b595e"
+            image = sun
+            setBackgrd(fairDay)
+            setColor("#ffffff")
+        } else if (forecast == "Moderate Rain") {
+            cardBack = "#4c6972"
+            cardText = "#ffffff"
+            image = rain
+            setBackgrd(shwr)
+            setColor("#ffffff")
+        } else if (forecast == "Light Showers") {
+            cardBack = "#6393a4"
+            cardText = "#ffffff"
+            image = rain
+            setBackgrd(lRain)
+        } else if (forecast == "Passing Showers") {
+            cardBack = "#6393a4"
+            cardText = "#ffffff"
+            image = rain
+            setBackgrd(lRain)
+        } else if (forecast == "Windy") {
+            cardBack = "#808080"
+            cardText = "#ffffff"
+            image = wind
+            setBackgrd(windy)
+        } else if (forecast == "Heavy Thundery Showers with Gusty Winds") {
+            cardBack = "#091A31"
+            cardText = "#ffffff"
+            image = thunderstorm
+            setBackgrd(thndr)
+            setColor("#ffffff")
         }
         areaForecast = forecast
     }
@@ -78,7 +136,7 @@ function WeatherDisplay(props) {
                 <Card style={{ fontFamily:"pompiere", fontSize: "x-large", color: cardText, background: cardBack, border: true, borderColor: "#4b595e", width: "100%", textAlign: "middle", height: "100%"}}>
                     <Image src={image} height={100}/>
                     <p/>
-                    <p>Forecast: {areaForecast}</p>
+                    <p>{areaForecast}</p>
                 </Card>
             </Col>
         </div>
