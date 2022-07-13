@@ -6,7 +6,7 @@ import MobilePage from './components/MobilePage';
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
-  const breakpoint = 620;
+  const breakpoint = 830;
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth)
