@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import { Content, Header } from 'antd/lib/layout/layout';
-import { Layout, Row, Col, DatePicker, TimePicker, Select, Card, Menu, Image } from 'antd';
+import { Layout, Row, Col, DatePicker, TimePicker, Select, Card, Image } from 'antd';
 import moment from 'moment'
 import './result.css';
 import '../App.css';
-
-const items = [
-    {
-      label: 'Home Page',
-      key: '/',
-    },
-]
 
 var checkDate = false
 var checkTime = false
@@ -145,8 +138,6 @@ function MobilePage(props) {
                 console.log("Error Getting Results")
                 }
             )
-            // checkDate = false
-            // checkTime = false
         }
     }
 
@@ -256,13 +247,19 @@ function MobilePage(props) {
                                     />
                                 </Col> 
                             </Row>
+                            <Row align="middle" style={{fontFamily: "pompiere", fontSize: "x-large"}}>
+                                Weather Forecast:
+                            </Row>
                             <Row align="middle" style={{padding: '5px 5px'}}>
                                 <Col span={24} align="middle">
-                                    <Card style={{ color: cardText, background: cardBack, border: true, borderColor: "#4b595e", width: "100%", textAlign: "start", height: "100%"}}>
+                                    <Card style={{ fontFamily:"pompiere", fontSize: "x-large", color: cardText, background: cardBack, border: true, borderColor: "#4b595e", width: "100%", textAlign: "start", height: "100%"}}>
                                         <p>Area: {selectedValue}</p>
                                         <p>Forecast: {areaForecast}</p>
                                     </Card>
                                 </Col>
+                            </Row>
+                            <Row align="middle" style={{padding: "5px", fontFamily: "pompiere", fontSize: "x-large"}}>
+                                Traffic Situation:
                             </Row>
                             <Row align="middle" style={{padding: '5px 5px'}}>
                                 <Col span={24} align="middle">

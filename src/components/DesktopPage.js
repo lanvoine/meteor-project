@@ -5,13 +5,6 @@ import moment from 'moment'
 import './result.css';
 import '../App.css';
 
-const items = [
-    {
-      label: 'Home Page',
-      key: '/',
-    },
-]
-
 var checkDate = false
 var checkTime = false
 var dateSearch = ""
@@ -254,6 +247,9 @@ function DesktopPage(props) {
                                         />
                                     </Col> 
                                 </Row>
+                                <Row align="middle" style={{height: "45%", padding: "5px", fontFamily: "pompiere", fontSize: "x-large"}}>
+                                    Traffic Situation:
+                                </Row>
                                 <Row align="middle" style={{height: "45%", padding: "5px"}}>
                                     <Col span={24} align="middle">
                                         <Image
@@ -267,8 +263,11 @@ function DesktopPage(props) {
                             </Col>
                             <Col span={1} align="middle"></Col>
                             <Col span={7} align="middle">
+                                <Row align="middle" style={{height: "45%", fontFamily: "pompiere", fontSize: "x-large"}}>
+                                    Weather Forecast:
+                                </Row>
                                 <Col span={24} align="middle">
-                                    <Card style={{ color: cardText, background: cardBack, border: true, borderColor: "#4b595e", width: "100%", textAlign: "start", height: "100%"}}>
+                                    <Card style={{ fontFamily:"pompiere", fontSize: "x-large", color: cardText, background: cardBack, border: true, borderColor: "#4b595e", width: "100%", textAlign: "start", height: "100%"}}>
                                         <p>Area: {selectedValue}</p>
                                         <p>Forecast: {areaForecast}</p>
                                     </Card>
