@@ -6,6 +6,7 @@ import ImageDisplay from './ImageDisplay';
 import moment from 'moment'
 import './result.css';
 import '../App.css';
+import fairDay from '../rsz_1cloud-blue-sky.jpg'
 
 var checkDate = false
 var checkTime = false
@@ -22,6 +23,8 @@ function MobilePage(props) {
     const [disableLocation, setDisabled] = useState(true);
     const [selectedValue, setSelected] = useState("None");
     const [checkSelect, setCheck] = useState(false);
+    const [background, setBackgrd] = useState(fairDay);
+    const [hColor, setColor] = useState("#fffffff");
 
     const disabledDate = (current) => {
         return current && current.valueOf() > Date.now();
@@ -47,7 +50,7 @@ function MobilePage(props) {
         var testDate = new Date(dateSearch)
         var today = Date.now()
         var todayDate = new Date(today)
-        if (testDate.getUTCDate() == todayDate.getUTCDate() && testDate.getUTCMonth() == todayDate.getUTCMonth() && testDate.getUTCFullYear() == todayDate.getUTCFullYear()) {
+        if (testDate.getDate() == todayDate.getDate() && testDate.getMonth() == todayDate.getMonth() && testDate.getFullYear() == todayDate.getFullYear()) {
             const minutes = [];
             const currentMinute = moment().minute();
             if (selectedHour === moment().hour()) {
@@ -144,8 +147,8 @@ function MobilePage(props) {
 
     return (
         <div>
-            <Layout style={{minHeight:"100vh", height:"100%", overflow: "auto"}}>
-                <Header>
+            <Layout style={{minHeight:"100vh", height:"100%", overflow: "auto", backgroundImage: `url(${background})`}}>
+                <Header style={{color: hColor}}>
                     WeatherPix
                 </Header>
                     <Content className='content' style={{ padding: '50px 50px' }}>
@@ -176,7 +179,7 @@ function MobilePage(props) {
                                     />
                                 </Col> 
                             </Row>
-                            <WeatherDisplay selectedValue={selectedValue} forecasts={forecasts} check={checkSelect}/>
+                            <WeatherDisplay selectedValue={selectedValue} forecasts={forecasts} check={checkSelect} setBackgrd={setBackgrd} setColor={setColor}/>
                             <ImageDisplay metadata={areaMetadata} images={images} selectedValue={selectedValue} check={checkSelect}/>
                         </div>
                     </Content>
