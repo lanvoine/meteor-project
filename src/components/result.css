@@ -19881,13 +19881,14 @@ textarea.ant-input {
   flex: 0 0 auto;
 }
 .ant-layout-header {
-  height: 64px;
+  height: 72px;
   padding: 0 50px;
   color: #bdf7ff;
   line-height: 64px;
   background: transparent;
   font-size: xx-large;
-  font-family: "pompiere"
+  font-family: "pompiere";
+  text-align: center;
 }
 .ant-layout-footer {
   padding: 24px 50px;
