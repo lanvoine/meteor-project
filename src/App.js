@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import DesktopPage from "./components/DesktopPage";
 import MobilePage from "./components/MobilePage";
