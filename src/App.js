@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import DesktopPage from "./components/DesktopPage";
-import MobilePage from "./components/MobilePage";
+import Main from "./components/Main";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -15,7 +14,7 @@ function App() {
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
-  return width < breakpoint ? <MobilePage /> : <DesktopPage />;
+  return <Main isMobile={width < breakpoint}/>;
 }
 
 export default App;

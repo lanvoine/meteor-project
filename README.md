@@ -15,8 +15,6 @@
   <p align="center">
     A convenient way to find the weather and traffic status at any time and place in Singapore!
     <br />
-    <a href="https://github.com/lanvoine/meteor-project"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://github.com/lanvoine/meteor-project/issues">Report Bug</a>
     ·
@@ -133,6 +131,7 @@ Don't forget to give the project a star! Thanks again!
 Clement Vimal Ravindran
 
 Project Link: [https://github.com/lanvoine/meteor-project](https://github.com/lanvoine/meteor-project)
+Email: [clement_ravindran@hotmail.com](clement_ravindran@hotmail.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
