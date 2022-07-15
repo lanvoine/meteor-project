@@ -18,8 +18,6 @@
     <a href="https://github.com/lanvoine/meteor-project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/lanvoine/meteor-project">View Demo</a>
-    ·
     <a href="https://github.com/lanvoine/meteor-project/issues">Report Bug</a>
     ·
     <a href="https://github.com/lanvoine/meteor-project/issues">Request Feature</a>
@@ -57,7 +55,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a simple project that can allow you to view the weather and traffic situations of various locations in Singapore based on a chosen date and time in the past.
+This is a simple project that allows you to view the weather and traffic situations of various locations in Singapore based on a chosen date and time in the past.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
