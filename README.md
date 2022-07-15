@@ -57,8 +57,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This is a simple project that can allow you to view the weather and traffic situations of various locations in Singapore based on a chosen date and time in the past.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -163,7 +161,6 @@ Images from:
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
 [contributors-url]: https://github.com/lanvoine/meteor-project/graphs/contributors
--LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/lanvoine
 [product-screenshot]: images/screenshot.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
